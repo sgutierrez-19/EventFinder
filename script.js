@@ -31,7 +31,7 @@ $(".btn").on("click", function() {
         
         for(var i = 0; i<eventsTotal; i++){
             console.log(response._embedded.events[i]);
-            var findPrice = response._embedded.events[i].children("priceRanges")
+            var findPrice = response.find("priceRanges");
             console.log(findPrice);
         }
         
