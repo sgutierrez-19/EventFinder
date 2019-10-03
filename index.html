@@ -18,6 +18,24 @@
 
 
 <!-- Link .js here -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+    var apikey = "aGCZcahc2U4ciJp31qvGwHVQ6PrHkZ2U";
+    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=cardib&apikey=" + apikey;
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+        var results = response;
+        console.log(response);
+        // concert name & venue
+        console.log(response._embedded.events[0].name);
+        console.log(response._embedded.events[0]._embedded.venues[0].name);
+        console.log(response._embedded.events[0].dates.start.localDate);
+        console.log(response._embedded.events[0].priceRanges[0].min);
+    });
+</script>
     
 </body>
 
