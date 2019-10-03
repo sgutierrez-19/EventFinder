@@ -5,20 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Changa|Gothic+A1|Hind+Guntur|Ruda&display=swap" rel="stylesheet">
+
     <title>Document</title>
-    <!-- link to css/foundation-zerb -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+  <!-- link to css/foundation-materialize -->
+
 </head>
 
 <body>
+    <header class="header">
+        <h1>Concert Finder</h1>
+    </header>
+            
+    <div id ="search-bar" class="search-bar">
+            <textarea
+            readonly
+            id="search"
+            placeholder="Search"
+            aria-label="Search Bar"
+            ></textarea>
 <!-- add header here -->
+
+<div class="col">
 
 
 <!-- add .main-container div here -->
+<div id="main-container" class="container">
+        <section class="main-section">
+          <h2>artist name</h2>
+
 <!-- sub divs/buttons will be generated through .js -->
+
+<div class="col s6">
+
+
+<section class="left section">
+        <p>left button 1</p>
+        <p>left button 2</p>
+
+
+</section>
+
+<div class="col s6">
+    
+<section class="right section">
+       
+        <p>right button 1</p>
+        <p>right button 2</p>
+
+</section>
 
 
 <!-- Link .js here -->
-    
+<script src="post_search_page.js"></script>
+
 </body>
 
 </html>
