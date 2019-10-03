@@ -5,41 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ConcertFinder</title>
+    <link rel="stylesheet" href="Styles/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Changa|Gothic+A1|Hind+Guntur|Ruda&display=swap" rel="stylesheet">
-
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
-  <!-- link to css/foundation-materialize -->
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="Styles/style.css">
 </head>
 
 <body>
-    <header class="header">
-        <h1>Concert Finder</h1>
-    </header>
-            
-    <div id ="search-bar" class="search-bar">
-            <textarea
-            readonly
-            id="search"
-            placeholder="Search"
-            aria-label="Search Bar"
-            ></textarea>
-<!-- add header here -->
+    <div class="background-image">
+        <!-- add header here -->
+        <nav>
+          <div class="nav-wrapper grey darken-4">
+            <a href="#" class="brand-logo">ConcertFinder</a>
+            <ul id="nav-mobile" class="right ">
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
+        </nav>
+        
+  
+        <div class="row search-row">
+          <form class="col s12 search-bar-form">
+            <div class="row">
+              <div class="col s2"></div>
+              <div class="input-field col s8">
+                <input id="textarea1" class="materialize-textarea search-bar" placeholder="Search by Artist"></input>
+                <div class="col s2"></div>
+              </div>
+            </div>
+          </form>
+        </div>
 
-<div class="col">
+        <div class="main-container"></div>
+
+        
+        
+              
+              
+              
 
 
-<!-- add .main-container div here -->
-<div id="main-container" class="container">
-        <section class="main-section">
-          <h2>artist name</h2>
 
-<!-- sub divs/buttons will be generated through .js -->
+
+      
+
+    
+        <!-- add .main-container div here -->
+        <!-- sub divs/buttons will be generated through .js -->
+    </div>
 
 <div class="col s6">
 
@@ -64,6 +79,16 @@
 <!-- Link .js here -->
 <script src="post_search_page.js"></script>
 
+    
+
+
+    <!-- Link .js here -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </body>
 
 </html>
+
+
+
+<!-- Changed title in head. Made and added reset.css & style.css.  Added in jQuery script link -->
