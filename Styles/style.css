@@ -6,7 +6,7 @@ body, html {
 
 .background-image {
     /* The image used */
-    background-image: url(Background-Pics/audience-band-concert-1306791.jpg);
+    background-image: url(audience-band-concert-1306791.jpg);
   
     /* Full height */
     height: 100%;
@@ -17,4 +17,6 @@ body, html {
     background-size: cover;
   }
 
-  
+.container {
+    height: 100%;
+}
