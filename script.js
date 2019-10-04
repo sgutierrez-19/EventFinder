@@ -110,27 +110,15 @@ $(".btn").on("click", function (){
 // Google API Script
 
 var map;
-    // function to get current user location    
-    // this actually interacts with the display of Map. 
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-
-    function showPosition(position) {
-
-      function findPlaces(placeToSearch) {
+var place = "the forum"
+      function findPlaces(place) {
         // added cors-anywhere in front of URL to allow googleMapsAPI to load     
-        var queryURL = "//cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?"
+        var queryURL = "//vast-shelf-03988.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?"
         // cleaning up URL by adding param    
         var queryParams = $.param({
-          input: placeToSearch,
-          inputtype: "textquery",
-          location: position.coords.latitude + "," + position.coords.longitude,
-          radius: 10,
+          query: "airport near " + place,
+          
+          
           fields: [
             "photos",
             "formatted_address",
@@ -160,12 +148,12 @@ var map;
           }
 
         });
-        map.setCenter({ lat: position.coords.latitude, lng: position.coords.longitude });
+        // map.setCenter({ lat: position.coords.latitude, lng: position.coords.longitude });
 
       }
-      findPlaces("flights");
+      findPlaces(place);
 
-    }
+    
 
 
     function initMap() {
@@ -173,6 +161,11 @@ var map;
         center: { lat: -34.397, lng: 150.644 },
         zoom: 12
       });
-      getLocation();
-      // console.log(map);
+      
+    
+    
+
     }
+
+    
+
