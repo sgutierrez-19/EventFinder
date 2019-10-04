@@ -35,3 +35,35 @@ a {
 .search-row {
     margin-top: 15%;
 }
+
+* {
+    border: 1px solid white !important;
+}
+
+.left-div, .right-div {
+    position: relative;
+    height: 200px;
+}
+
+.left-Btn1, .left-Btn2 {
+    height: 50px;
+    background-color: white;
+}
+
+.test {
+    height: 100%;
+}
+
+.left-Btn1 {
+
+}
+
+.left-Btn2 {
+
+}
+
+
+.right-Btn1, .right-Btn2 {
+    height: 50px;
+    clear: left;
+}

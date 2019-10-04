@@ -2,67 +2,82 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ConcertFinder</title>
-    <link rel="stylesheet" href="Styles/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Changa|Gothic+A1|Hind+Guntur|Ruda&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">    
-    <link rel="stylesheet" href="Styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ConcertFinder</title>
+  <link rel="stylesheet" href="Styles/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Changa|Gothic+A1|Hind+Guntur|Ruda&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Styles/style.css">
 </head>
 
 <body>
-    <div class="background-image">
-        <!-- add header here -->
-        <nav>
-          <div class="nav-wrapper grey darken-4">
-            <a href="#" class="brand-logo">ConcertFinder</a>
-            <ul id="nav-mobile" class="right ">
-              <li><a href="#">About</a></li>
-            </ul>
+  <div class="background-image">
+    <!-- add header here -->
+    <nav>
+      <div class="nav-wrapper grey darken-4">
+        <a href="#" class="brand-logo">ConcertFinder</a>
+        <ul id="nav-mobile" class="right ">
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="row search-row">
+      <form class="col s12 search-bar-form">
+        <div class="row">
+          <div class="col s2"></div>
+          <div class="input-field col s8">
+            <input id="textarea1" class="materialize-textarea search-bar" placeholder="Search by Artist"></input>
+            <div class="col s2"></div>
           </div>
-        </nav>
-        
-  
-        <div class="row search-row">
-          <form class="col s12 search-bar-form">
-            <div class="row">
-              <div class="col s2"></div>
-              <div class="input-field col s8">
-                <input id="textarea1" class="materialize-textarea search-bar" placeholder="Search by Artist"></input>
-                <div class="col s2"></div>
-              </div>
-            </div>
-          </form>
+        </div>
+      </form>
+    </div>
+
+    <div class="row main-container">
+
+      <div class="col s6 left-div">
+        <div class="row test">
+          <div class="col s6 left-Btn1">
+
+          </div>
+        </div>
+        <div class="row test">
+          <div class="col s6 left-Btn2">
+
+          </div>
         </div>
 
-        <div class="main-container"></div>
+      </div>
 
-        
-        
-              
-              
-              
+      <div class="col s6 right-div">
+        <!-- <div class="row"> -->
+        <div class="col s6 right-Btn1">
 
+        </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+        <div class="col s6 right-Btn2">
 
+        </div>
+        <!-- </div> -->
 
+      </div>
 
-      
-
-    
-        <!-- add .main-container div here -->
-        <!-- sub divs/buttons will be generated through .js -->
     </div>
 
 
-    
+
 
 
     <!-- Link .js here -->
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </body>
 
 </html>
