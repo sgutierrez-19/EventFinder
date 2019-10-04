@@ -32,12 +32,8 @@ a {
     border-radius: 25px;
 }
 
-/* .search-row {
+.search-row {
     margin-top: 15%;
-} */
-
-* {
-    border: 1px solid white !important;
 }
 
 .left-div, .right-div {
@@ -50,6 +46,9 @@ a {
     clear: left;
     margin: 20px auto;
     text-align: center;
+    
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
 }
 
 p {
