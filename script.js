@@ -1,3 +1,16 @@
+<p id="concertDates"></p>
+
+var concerts = ["date1", "date2", "date3", "date4"];
+var i = 4;
+var len = concerts.length;
+var text = "";
+
+for (; i < len; i++) {
+    text += concerts [i] + "<br>"
+
+document.getElementById("concertDates").innerHTML = text;
+}
+
 function populate() {
     var topleft = $.left-button1;
    
