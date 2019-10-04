@@ -14,6 +14,7 @@ document.getElementById("concertDates").innerHTML = text;
 function populate() {
     var topleft = $.left-button1;
    
+    
     var topleft = $(p-name).text(var1);
 
     var topleft = $(p-date).text(var1);
