@@ -65,8 +65,13 @@ p {
 .p-sub {
     font-size: 12px;
     float: left;
+    margin-top:10px;
 }
 
 .main-container {
     margin-top: 15%;
+}
+
+* {
+    border: 1px solid white !important;
 }
