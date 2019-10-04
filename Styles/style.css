@@ -31,6 +31,46 @@ a {
     border-radius: 25px;
 }
 
-.search-row {
+/* .search-row {
     margin-top: 15%;
+} */
+
+.left-div, .right-div {
+    position: relative;
+    height: 200px;
+}
+
+.left-Btn1, .left-Btn2, .right-Btn1, .right-Btn2 {
+    height: 65px;
+    clear: left;
+    margin: 20px auto;
+    text-align: center;
+    
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+}
+
+p {
+    color: white;
+    font-family: 'Gothic A1', sans-serif !important;
+    /* margin: 4px auto; */
+}
+
+.p-main {
+    font-size: 26px;
+    clear:both;
+}
+
+.p-sub {
+    font-size: 12px;
+    float: left;
+    margin-top:10px;
+}
+
+.main-container {
+    margin-top: 15%;
+}
+
+* {
+    border: 1px solid white !important;
 }

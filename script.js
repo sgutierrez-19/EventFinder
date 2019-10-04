@@ -1,15 +1,4 @@
-<p id="concertDates"></p>
-
-var concerts = ["date1", "date2", "date3", "date4"];
-var i = 4;
-var len = concerts.length;
-var text = "";
-
-for (; i < len; i++) {
-    text += concerts [i] + "<br>"
-
-document.getElementById("concertDates").innerHTML = text;
-}
+var order = [1, 2, 3, 4]
 
 function populate() {
 
@@ -60,9 +49,12 @@ var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=ca
 // i tried using the input tag and when user hits enter it runs the ajax but it wasnt working
 
 
-// submit button functions
-$(".btn").on("click", function (){
-    
+// submit button functions *****NEED TO CHANGE EVENT TO SUBMIT ON INPUT*****
+$(".search-bar-form").on("submit", function (){
+    event.preventDefault();
+    $(".left-div").html('');
+    $(".right-div").html('');
+
     var eventInput = $("#textarea1").val();
     console.log(eventInput);
     // making the url 
@@ -88,31 +80,46 @@ $(".btn").on("click", function (){
                 // console log the event 
                 console.log(response._embedded.events[i]);
                 
-                // creating an empty div for each event
-                var eventDiv = $("<div>");
                 // there should always be a name,venue and local date for each event so we can go ahead and append those to the new div
                 var eventName = response._embedded.events[i].name;
                 var eventVenue = response._embedded.events[i]._embedded.venues[0].name;
                 var eventDate = response._embedded.events[i].dates.start.localDate;
-                eventDiv.append("Date: " + eventDate);
-                eventDiv.append(eventName);
-                eventDiv.append("Venue: " + eventVenue);
-
                 
+                // Making variables that create divs and ps
+                var buttonDiv = $("<div>");
+                buttonDiv.attr("class", "col s8 offset-s2 Btn" + order[i]);
+                var row1 = $("<div>");
+                row1.attr("class", "row row1");
+                var row2 = $("<div>");
+                row2.attr("class", "row row2");
+                var pName = $("<p>");
+                pName.attr("class", "p-name p-main col s12");
+                pName.text(eventName);
+                var pDate = $("<p>");
+                pDate.attr("class", "p-date p-sub col s6");
+                pDate.text("Date: " + eventDate);
+                var pLocation = $("<p>");
+                pLocation.attr("class", "p-location p-sub col s6");
+                pLocation.text("Venue: " + eventVenue);
+
+                row1.append(pName);
+                buttonDiv.append(row1);
+                row2.append(pDate, pLocation);
+                buttonDiv.append(row2);
                 // the price range seems to not always exist so we will check to see if it is in the object before appending it
                 
-                var priceExist = response._embedded.events[i].priceRanges;            
+                // var priceExist = response._embedded.events[i].priceRanges;            
 
-                // if statements for if price range isnt there
-                if (priceExist === undefined) {
-                   console.log("No price range");
-                } else {
-                    console.log("price range");
-                    var eventMinPrice = response._embedded.events[i].priceRanges[0].min;
-                    eventDiv.append(eventMinPrice);
-                }
+                // // if statements for if price range isnt there
+                // if (priceExist === undefined) {
+                //    console.log("No price range");
+                // } else {
+                //     console.log("price range");
+                //     var eventMinPrice = response._embedded.events[i].priceRanges[0].min;
+                //     eventDiv.append(eventMinPrice);
+                // }
                 // append the newly created eventDiv to the main-container div which is where i assume the events should go?
-                $(".main-container").append(eventDiv);
+                $(".div" + order[i]).append(buttonDiv);  
             }
         
     });
@@ -182,5 +189,4 @@ var place = "the forum"
 
     }
 
-    
 
