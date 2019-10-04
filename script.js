@@ -1,14 +1,17 @@
 var apikey = "aGCZcahc2U4ciJp31qvGwHVQ6PrHkZ2U";
 var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=cardib&apikey=" + apikey;
 
-// textarea: clear the textarea content when clicked on
-$("#textarea1").on("click", function () {
-    $("#textareainfo").empty();
-})
+// i need help with getting the preventDefault() to work when we switch this to input and not the button
+// $("#textarea1").on("submit", function(event){
+//     event.preventDefault();
+// })
+
+// i tried using the input tag and when user hits enter it runs the ajax but it wasnt working
 
 
 // submit button functions
-$(".btn").on("click", function () {
+$(".btn").on("click", function (){
+    
     var eventInput = $("#textarea1").val();
     console.log(eventInput);
     // making the url 
@@ -19,39 +22,46 @@ $(".btn").on("click", function () {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-
-        // concert name & venue
-        // console.log(response._embedded.events[0].name);
-        // console.log(response._embedded.events[0]._embedded.venues[0].name);
-        // console.log(response._embedded.events[0].dates.start.localDate);
-        // iterate through the events array and check if priceRanges is present
+        // console log for the artist that the user searches for 
+        console.log(response);   
         
         
-        // add a check if the event exists or not
         
-
-
-
+        // add a check if the event exists or not  
+        
+             
         // as long as the user searches an artist that exists with events this will execute
-            var eventsTotal = response._embedded.events.length;
-            console.log(eventsTotal);
-            for (var i = 0; i < eventsTotal; i++) {
-                // console log the event and the price range
+            var eventsTotal = response._embedded.events;
+            // for loop will create as many divs as there are events, so need to figure out how to limit number of divs 
+            for (var i = 0; i < eventsTotal.length; i++) {
+                // console log the event 
                 console.log(response._embedded.events[i]);
-                var priceExist = response._embedded.events[i].priceRanges;
-                var abcd;
-                // console.log(abcd);
-                console.log(priceExist);
+                
+                // creating an empty div for each event
+                var eventDiv = $("<div>");
+                // there should always be a name,venue and local date for each event so we can go ahead and append those to the new div
+                var eventName = response._embedded.events[i].name;
+                var eventVenue = response._embedded.events[i]._embedded.venues[0].name;
+                var eventDate = response._embedded.events[i].dates.start.localDate;
+                eventDiv.append("Date: " + eventDate);
+                eventDiv.append(eventName);
+                eventDiv.append("Venue: " + eventVenue);
+
+                
+                // the price range seems to not always exist so we will check to see if it is in the object before appending it
+                
+                var priceExist = response._embedded.events[i].priceRanges;            
 
                 // if statements for if price range isnt there
                 if (priceExist === undefined) {
-                    console.log("no price range");
+                   console.log("No price range");
                 } else {
                     console.log("price range");
-                    console.log(response._embedded.events[i].priceRanges[0].min);
+                    var eventMinPrice = response._embedded.events[i].priceRanges[0].min;
+                    eventDiv.append(eventMinPrice);
                 }
-
-
+                // append the newly created eventDiv to the main-container div which is where i assume the events should go?
+                $(".main-container").append(eventDiv);
             }
         
     });
