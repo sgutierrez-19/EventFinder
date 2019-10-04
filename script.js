@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function populate() {
     var topleft = $.left-button1;
    
@@ -35,7 +34,6 @@ function populate() {
 
     var bottomright = $(p-location).text(var1);
 }
-=======
 var apikey = "aGCZcahc2U4ciJp31qvGwHVQ6PrHkZ2U";
 var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=cardib&apikey=" + apikey;
 
@@ -106,4 +104,3 @@ $(".btn").on("click", function (){
 
 
 });
->>>>>>> origin/master
