@@ -1,4 +1,3 @@
-
 body, html {
     height: 100%;
     margin: 0px;
@@ -17,6 +16,21 @@ body, html {
     background-size: cover;
   }
 
-.container {
-    height: 100%;
+.search-bar {
+    color:white;
+    font-weight: bold;
+    font-family: 'Gothic A1', sans-serif !important;
+}
+
+a {
+    font-family: 'Changa', sans-serif !important;
+}
+
+.input-field {
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+}
+
+.search-row {
+    margin-top: 15%;
 }
