@@ -12,16 +12,17 @@ document.getElementById("concertDates").innerHTML = text;
 }
 
 function populate() {
+
+    var first = date1[0];
     var topleft = $.left-button1;
    
-    
     var topleft = $(p-name).text(var1);
 
     var topleft = $(p-date).text(var1);
 
     var topleft = $(p-location).text(var1);
 
-
+    var second = date2[1];
     var bottomleft = $.left-button2;
   
     var bottomleft = $(p-name).text(var1)
@@ -30,7 +31,7 @@ function populate() {
 
     var bottomleft = $(p-location).text(var1);
 
-
+    var third = date3[2];
     var topright = $.right-button1;
   
     var topright = $(p-name).text(var1);
@@ -39,7 +40,7 @@ function populate() {
 
     var topright = $(p-location).text(var1);
 
-
+    var fourth = date4[3];
     var bottomright = $.right-button2;
  
     var bottomright = $(p-name).text(var1);
