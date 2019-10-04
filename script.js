@@ -104,3 +104,75 @@ $(".btn").on("click", function (){
 
 
 });
+
+
+
+// Google API Script
+
+var map;
+    // function to get current user location    
+    // this actually interacts with the display of Map. 
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+
+      function findPlaces(placeToSearch) {
+        // added cors-anywhere in front of URL to allow googleMapsAPI to load     
+        var queryURL = "//cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?"
+        // cleaning up URL by adding param    
+        var queryParams = $.param({
+          input: placeToSearch,
+          inputtype: "textquery",
+          location: position.coords.latitude + "," + position.coords.longitude,
+          radius: 10,
+          fields: [
+            "photos",
+            "formatted_address",
+            "name",
+            "rating",
+            "opening_hours",
+            "geometry"
+          ].join(","),
+          key: "AIzaSyBg8H-9S7JXehlh3z4iyqRWNHfbnbEE3ko"
+
+
+        })
+        $.ajax({
+          url: queryURL + queryParams,
+          method: "GET"
+        }).then(function (response) {
+          var places = response.results
+          console.log(places);
+          for (var i = 0; i < places.length; i++) {
+            var place = places[i];
+            // Add a simple pin on the map       
+            var marker = new google.maps.Marker({
+              position: place.geometry.location,
+              map: map,
+              title: place.name
+            });
+          }
+
+        });
+        map.setCenter({ lat: position.coords.latitude, lng: position.coords.longitude });
+
+      }
+      findPlaces("flights");
+
+    }
+
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 12
+      });
+      getLocation();
+      // console.log(map);
+    }
