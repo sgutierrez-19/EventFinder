@@ -31,21 +31,21 @@ a {
     border-radius: 25px;
 }
 
-/* .search-row {
-    margin-top: 15%;
-} */
+.search-row {
+    margin-top: 20%;
+}
 
 .left-div, .right-div {
     position: relative;
     height: 200px;
 }
 
-.left-Btn1, .left-Btn2, .right-Btn1, .right-Btn2 {
+.Btn1, .Btn2, .Btn3, .Btn4 {
     height: 65px;
     clear: left;
     margin: 20px auto;
     text-align: center;
-    
+    border: 1px solid white !important;
     backdrop-filter: blur(10px);
     border-radius: 25px;
 }
@@ -71,6 +71,10 @@ p {
     margin-top: 15%;
 }
 
-* {
+/* * {
     border: 1px solid white !important;
+} */
+
+img {
+    height: 100% !important;
 }
