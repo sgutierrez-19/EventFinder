@@ -57,6 +57,13 @@ a {
 p {
     color: white;
     font-family: 'Gothic A1', sans-serif !important;
+    text-align: center;
+}
+
+a {
+    font-family: 'Gothic A1', sans-serif !important;
+    text-align: center;
+    font-weight: bold;
 }
 
 .p-main {

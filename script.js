@@ -19,6 +19,7 @@ $(".search-bar-form").on("submit", function () {
 
   $(".left-div").html('');
   $(".right-div").html('');
+  $(".left-div").css("background-color", "")
 
   var eventInput = $("#textarea1").val();
   // console.log(eventInput);
@@ -150,6 +151,8 @@ function concertInfo() {
   lDiv.append(row2);
   row3.append(aTicket);
   lDiv.append(row3);
+
+  lDiv.css("background-color", " rgba(0, 0, 0, 0.644)")
 }
 
 // Google API Script
