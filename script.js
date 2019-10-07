@@ -58,7 +58,7 @@ $(".search-bar-form").on("submit", function () {
       buttonDiv.attr("data-lat", latitude);
       buttonDiv.attr("data-long", longitude);
       buttonDiv.attr("data-tickets", tickets);
-      buttonDiv.attr("data-city", eventCity + ", " + eventCountry);
+      buttonDiv.attr("data-venue", eventVenue);
       buttonDiv.attr("data-date", eventDate);
 
       var row1 = $("<div>");
@@ -73,7 +73,7 @@ $(".search-bar-form").on("submit", function () {
       pDate.text("Date: " + eventDate);
       var pLocation = $("<p>");
       pLocation.attr("class", "p-location p-sub col s6");
-      pLocation.text(eventVenue);
+      pLocation.text(eventCity + ", " + eventCountry);
 
       row1.append(pName);
       buttonDiv.append(row1);
@@ -102,14 +102,15 @@ $(".search-bar-form").on("submit", function () {
         longitude1 = parseFloat(longitude1);
         concertName = this.querySelector(".p-name").innerText;
         concertDate = this.getAttribute("data-date");
-        concertVenue = this.querySelector(".p-location").innerText;
-        concertCity = this.getAttribute("data-city");
+        concertVenue = this.getAttribute("data-venue")
+        concertCity = this.querySelector(".p-location").innerText;
         ticketsLink = this.getAttribute("data-tickets");
         concertInfo();
         // PLACEHOLDER FOR FUNCTION to invoke mini-map
         var mapLink = "//maps.googleapis.com/maps/api/js?key=AIzaSyBg8H-9S7JXehlh3z4iyqRWNHfbnbEE3ko&callback=initMap"
         $("#mapScript").attr("src", mapLink);
         marker.setMap(map);
+        findPlaces(concertVenue, concertCity);
       })
     }
   });
@@ -131,7 +132,7 @@ function concertInfo() {
   row3.attr("class", "row row3");
   var pDetails = $("<p>");
   pDetails.attr("class", "p-details p-main col s12");
-  pDetails.text("Concert Details");
+  pDetails.text("**Concert Details**");
   var pName = $("<p>");
   pName.attr("class", "p-name p-main col s12");
   pName.text(concertName);
@@ -168,7 +169,7 @@ function findPlaces(place, city) {
   var queryURL = "//vast-shelf-03988.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?"
   // cleaning up URL by adding param    
   var queryParams = $.param({
-    query: "airport near " + place,
+    query: "airport near " + place + " " + city,
 
 
     fields: [
@@ -205,6 +206,8 @@ function findPlaces(place, city) {
 
     function initMap() {
       var mapCenter = {lat: latitude1, lng: longitude1};
+      var rightDiv = $(".right-div");
+      rightDiv.css("height", "250px");
       map = new google.maps.Map(document.getElementById('map'), {
         center: mapCenter,
         zoom: 15
