@@ -88,7 +88,7 @@ img {
 }
 
 @media screen and (max-width: 400px) {
-    getElementByClassName(.Btn1);
+    getElementsByClassName(.Btn1);
     float: none;
     margin-right: 0;
     width: auto;
