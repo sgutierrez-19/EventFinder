@@ -43,7 +43,7 @@ a {
 .Btn1, .Btn2, .Btn3, .Btn4 {
     height: auto;
     clear: left;
-    margin: 10px auto;
+    margin: 10px 0px;
     text-align: center;
     /* border: 1px solid white !important; */
     /* backdrop-filter: blur(10px); */
