@@ -137,8 +137,7 @@ var place = "the forum"
         // cleaning up URL by adding param    
         var queryParams = $.param({
           query: "airport near " + place,
-          
-          
+                   
           fields: [
             "photos",
             "formatted_address",
@@ -172,7 +171,8 @@ var place = "the forum"
 
       }
       findPlaces(place);
-
+    //  function for btn+num
+    
     
 
 
