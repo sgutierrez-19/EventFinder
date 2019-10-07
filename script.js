@@ -6,6 +6,7 @@ var concertName;
 var concertVenue;
 var concertCity;
 var concertName;
+var marker;
 
 var apikey = "aGCZcahc2U4ciJp31qvGwHVQ6PrHkZ2U";
 var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=cardib&apikey=" + apikey;
@@ -96,7 +97,9 @@ $(".search-bar-form").on("submit", function () {
       $(".Btn" + order[i]).click(function (event) {
         event.preventDefault();
         latitude1 = this.getAttribute("data-lat");
+        latitude1 = parseFloat(latitude1);
         longitude1 = this.getAttribute("data-long");
+        longitude1 = parseFloat(longitude1);
         concertName = this.querySelector(".p-name").innerText;
         concertDate = this.getAttribute("data-date");
         concertVenue = this.querySelector(".p-location").innerText;
@@ -104,6 +107,9 @@ $(".search-bar-form").on("submit", function () {
         ticketsLink = this.getAttribute("data-tickets");
         concertInfo();
         // PLACEHOLDER FOR FUNCTION to invoke mini-map
+        var mapLink = "//maps.googleapis.com/maps/api/js?key=AIzaSyBg8H-9S7JXehlh3z4iyqRWNHfbnbEE3ko&callback=initMap"
+        $("#mapScript").attr("src", mapLink);
+        marker.setMap(map);
       })
     }
   });
@@ -157,7 +163,7 @@ function concertInfo() {
 var map;
 var place;
 
-function findPlaces(place) {
+function findPlaces(place, city) {
   // added cors-anywhere in front of URL to allow googleMapsAPI to load     
   var queryURL = "//vast-shelf-03988.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?"
   // cleaning up URL by adding param    
@@ -193,18 +199,22 @@ function findPlaces(place) {
     }
 
   });
-  // map.setCenter({ lat: position.coords.latitude, lng: position.coords.longitude });
+  
 
 }
 
-    // function initMap() {
-    //   latitude1 = parseFloat(latitude1);
-    //   longitude1 = parseFloat(longitude1);
-    //   map = new google.maps.Map(document.getElementById('map'), {
-    //     center: { lat: latitude1, lng: longitude1 },
-    //     zoom: 10
-    //   });
-    // }
+    function initMap() {
+      var mapCenter = {lat: latitude1, lng: longitude1};
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: mapCenter,
+        zoom: 15
+      });
+        marker = new google.maps.Marker({
+        position: mapCenter,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
 
 
 
@@ -225,65 +235,7 @@ function findPlaces(place) {
 
   //     var bottomleft = $(p-date).text(var1);
 
-<<<<<<< HEAD
-var map;
-var place = "the forum"
-      function findPlaces(place) {
-        // added cors-anywhere in front of URL to allow googleMapsAPI to load     
-        var queryURL = "//vast-shelf-03988.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?"
-        // cleaning up URL by adding param    
-        var queryParams = $.param({
-          query: "airport near " + place,
-                   
-          fields: [
-            "photos",
-            "formatted_address",
-            "name",
-            "rating",
-            "opening_hours",
-            "geometry"
-          ].join(","),
-          key: "AIzaSyBg8H-9S7JXehlh3z4iyqRWNHfbnbEE3ko"
-
-
-        })
-        $.ajax({
-          url: queryURL + queryParams,
-          method: "GET"
-        }).then(function (response) {
-          var places = response.results
-          console.log(places);
-          for (var i = 0; i < places.length; i++) {
-            var place = places[i];
-            // Add a simple pin on the map       
-            var marker = new google.maps.Marker({
-              position: place.geometry.location,
-              map: map,
-              title: place.name
-            });
-          }
-
-        });
-        // map.setCenter({ lat: position.coords.latitude, lng: position.coords.longitude });
-
-      }
-      findPlaces(place);
-    //  function for btn+num
-    
-    
-
-
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 12
-      });
-      
-    
-    
-=======
   //     var bottomleft = $(p-location).text(var1);
->>>>>>> origin/master
 
 
   //     var topright = $.right-button1;
