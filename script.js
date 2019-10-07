@@ -57,7 +57,7 @@ $(".search-bar-form").on("submit", function () {
       buttonDiv.attr("data-lat", latitude);
       buttonDiv.attr("data-long", longitude);
       buttonDiv.attr("data-tickets", tickets);
-      buttonDiv.attr("data-city", eventCity + ", " + eventCountry);
+      buttonDiv.attr("data-venue", eventVenue);
       buttonDiv.attr("data-date", eventDate);
 
       var row1 = $("<div>");
@@ -72,7 +72,7 @@ $(".search-bar-form").on("submit", function () {
       pDate.text("Date: " + eventDate);
       var pLocation = $("<p>");
       pLocation.attr("class", "p-location p-sub col s6");
-      pLocation.text(eventVenue);
+      pLocation.text(eventCity + ", " + eventCountry);
 
       row1.append(pName);
       buttonDiv.append(row1);
@@ -99,8 +99,8 @@ $(".search-bar-form").on("submit", function () {
         longitude1 = this.getAttribute("data-long");
         concertName = this.querySelector(".p-name").innerText;
         concertDate = this.getAttribute("data-date");
-        concertVenue = this.querySelector(".p-location").innerText;
-        concertCity = this.getAttribute("data-city");
+        concertVenue = this.getAttribute("data-venue")
+        concertCity = this.querySelector(".p-location").innerText;
         ticketsLink = this.getAttribute("data-tickets");
         concertInfo();
         // PLACEHOLDER FOR FUNCTION to invoke mini-map
@@ -125,7 +125,7 @@ function concertInfo() {
   row3.attr("class", "row row3");
   var pDetails = $("<p>");
   pDetails.attr("class", "p-details p-main col s12");
-  pDetails.text("Concert Details");
+  pDetails.text("**Concert Details**");
   var pName = $("<p>");
   pName.attr("class", "p-name p-main col s12");
   pName.text(concertName);

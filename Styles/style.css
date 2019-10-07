@@ -41,39 +41,45 @@ a {
 }
 
 .Btn1, .Btn2, .Btn3, .Btn4 {
-    height: 65px;
+    height: auto;
     clear: left;
-    margin: 20px auto;
+    margin: 10px auto;
     text-align: center;
-    border: 1px solid white !important;
-    backdrop-filter: blur(10px);
+    /* border: 1px solid white !important; */
+    /* backdrop-filter: blur(10px); */
     border-radius: 25px;
+    padding-top: 5px;
+
+    background-color: rgba(0, 0, 0, 0.644);
+
 }
 
 p {
     color: white;
     font-family: 'Gothic A1', sans-serif !important;
-    /* margin: 4px auto; */
 }
 
 .p-main {
-    font-size: 26px;
+    font-size: 30px;
     clear:both;
+    margin-top:15px;
+    font-weight: bold;
 }
 
 .p-sub {
-    font-size: 12px;
+    font-size: 16px;
     float: left;
-    margin-top:10px;
+    margin-top:5px;
 }
 
 .main-container {
-    margin-top: 15%;
+    margin-top: 12%;
 }
 
-/* * {
-    border: 1px solid white !important;
-} */
+.row {
+    margin-bottom: 5px !important;
+    /* margin-top: 5px !important; */
+}
 
 img {
     height: 100% !important;
