@@ -22,10 +22,6 @@ body, html {
     font-family: 'Gothic A1', sans-serif !important;
 }
 
-a {
-    font-family: 'Changa', sans-serif !important;
-}
-
 .input-field {
     backdrop-filter: blur(10px);
     border-radius: 25px;
@@ -45,13 +41,30 @@ a {
     clear: left;
     margin: 10px auto;
     text-align: center;
-    /* border: 1px solid white !important; */
-    /* backdrop-filter: blur(10px); */
+    backdrop-filter: blur(2px);
     border-radius: 25px;
     padding-top: 5px;
-
     background-color: rgba(0, 0, 0, 0.644);
+}
 
+.Btn4:hover p {
+    color: rgb(136, 166, 255);
+}
+
+.Btn3:hover p {
+    color: rgb(136, 166, 255);
+}
+
+.Btn2:hover p {
+    color: rgb(136, 166, 255);
+}
+
+.Btn1:hover p {
+    color: rgb(136, 166, 255);
+}
+
+.nav-wrapper {
+    font-family: 'Gothic A1', sans-serif !important;
 }
 
 p {
@@ -74,20 +87,47 @@ a {
 }
 
 .p-sub {
-    font-size: 16px;
+    font-size: 14px;
     float: left;
-    margin-top:5px;
+    margin-top:12px;
 }
 
 .main-container {
     margin-top: 12%;
 }
 
-.row {
-    margin-bottom: 5px !important;
-    /* margin-top: 5px !important; */
+.about {
+    height: 200px;
+    text-align: center;
+    backdrop-filter: blur(2px);
+    border-radius: 25px;
+    padding-top: 5px;
+    background-color: rgba(0, 0, 0, 0.644);
 }
 
-img {
-    height: 100% !important;
+.row {
+    margin-bottom: 5px !important;
 }
+
+.about-main {
+    margin-top: 10%;
+    height: auto;
+}
+
+h2 {
+    color: white;
+    font-weight: bold;
+    margin: 2px 0px;
+}
+
+.p-about {
+    font-size: 14px;
+    margin-top:12px;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+
+

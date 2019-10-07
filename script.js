@@ -21,6 +21,9 @@ $(".search-bar-form").on("submit", function () {
   $(".left-div").html('');
   $(".right-div").html('');
   $(".left-div").css("background-color", "")
+  $(".left-div").css("backdrop-filter", "");
+  $(".left-div").css("border-radius", "");
+  $(".left-div").css("height", "200px");
 
   var eventInput = $("#textarea1").val();
   // console.log(eventInput);
@@ -131,9 +134,9 @@ function concertInfo() {
   row2.attr("class", "row row2");
   var row3 = $("<div>");
   row3.attr("class", "row row3");
-  var pDetails = $("<p>");
-  pDetails.attr("class", "p-details p-main col s12");
-  pDetails.text("**Concert Details**");
+  // var pDetails = $("<p>");
+  // pDetails.attr("class", "p-details p-main col s12");
+  // pDetails.text("Details");
   var pName = $("<p>");
   pName.attr("class", "p-name p-main col s12");
   pName.text(concertName);
@@ -144,7 +147,7 @@ function concertInfo() {
   pDate.attr("class", "p-date p-sub col s12");
   pDate.text("When: " + concertDate);
   var pCity = $("<p>");
-  pCity.attr("class", "p-city p-sub col s12");
+  pCity.attr("class", "p-city p-sub col s12 p-sub");
   pCity.text("Where: " + concertCity);
   var aTicket = $("<a>");
   aTicket.attr("class", "a-ticket col s12");
@@ -152,14 +155,18 @@ function concertInfo() {
   aTicket.attr("target", "_blank");
   aTicket.text("Buy Tickets");
 
-  row1.append(pDetails, pName);
+  row1.append(pName);
   lDiv.append(row1);
   row2.append(pVenue, pDate, pCity);
   lDiv.append(row2);
   row3.append(aTicket);
   lDiv.append(row3);
 
-  lDiv.css("background-color", " rgba(0, 0, 0, 0.644)")
+  lDiv.css("background-color", " rgba(0, 0, 0, 0.644)");
+  lDiv.css("backdrop-filter", "blur(2px)");
+  lDiv.css("border-radius", "25px");
+  lDiv.css("height", "250px");
+
 }
 
 // Google API Script
