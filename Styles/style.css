@@ -38,13 +38,11 @@ a {
 .left-div, .right-div {
     position: relative;
     height: 200px;
-    
 }
 
 .Btn1, .Btn2, .Btn3, .Btn4 {
     height: auto;
     clear: left;
-    float: left;
     margin: 10px auto;
     text-align: center;
     /* border: 1px solid white !important; */
@@ -85,14 +83,4 @@ p {
 
 img {
     height: 100% !important;
-}
-
-@media screen and (max-width: 400px) {
-    .Btn1, .Btn2, .Btn3, .Btn4 {
-    float: left;
-    margin-right: 0;
-    width: auto;
-    border:0;
-    border-bottom: 2px;
-    }
 }
