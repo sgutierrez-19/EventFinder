@@ -7,17 +7,8 @@ var concertVenue;
 var concertCity;
 var concertName;
 
-<<<<<<< HEAD
-function populate() {
-
-    var first = date1[0];
-    var topleft = $.left-button1;
-   
-    var topleft = $(p-name).text(var1);
-=======
 var apikey = "aGCZcahc2U4ciJp31qvGwHVQ6PrHkZ2U";
 var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=cardib&apikey=" + apikey;
->>>>>>> origin
 
 // submit button functions
 $(".search-bar-form").on("submit", function () {
@@ -118,12 +109,6 @@ $(".search-bar-form").on("submit", function () {
   });
 
 
-<<<<<<< HEAD
-    var second = date2[1];
-    var bottomleft = $.left-button2;
-  
-    var bottomleft = $(p-name).text(var1)
-=======
 });
 
 function concertInfo() {
@@ -166,7 +151,6 @@ function concertInfo() {
   row3.append(aTicket);
   lDiv.append(row3);
 }
->>>>>>> origin
 
 // Google API Script
 
@@ -208,17 +192,10 @@ function findPlaces(place) {
       });
     }
 
-<<<<<<< HEAD
-    var third = date3[2];
-    var topright = $.right-button1;
-  
-    var topright = $(p-name).text(var1);
-=======
   });
   // map.setCenter({ lat: position.coords.latitude, lng: position.coords.longitude });
 
 }
->>>>>>> origin
 
     // function initMap() {
     //   latitude1 = parseFloat(latitude1);
@@ -230,19 +207,10 @@ function findPlaces(place) {
     // }
 
 
-<<<<<<< HEAD
-    var fourth = date4[3];
-    var bottomright = $.right-button2;
- 
-    var bottomright = $(p-name).text(var1);
-   
-     var bottomright = $(p-date).text(var1);
-=======
 
   // may not be used due to text populating in for loop
   //   function populate() {
   //     var topleft = $.left-button1;
->>>>>>> origin
 
   //     var topleft = $(p-name).text(var1);
 
