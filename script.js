@@ -96,7 +96,7 @@ $(".search-bar-form").on("submit", function () {
         ticketsLink = this.getAttribute("data-tickets");
         concertInfo();
         // PLACEHOLDER FOR FUNCTION to invoke mini-map
-        $(".right-div").attr("class", "col s5 right-div");
+        // $(".right-div").attr("class", "col s5 right-div");
         var mapLink = "//maps.googleapis.com/maps/api/js?key=AIzaSyBg8H-9S7JXehlh3z4iyqRWNHfbnbEE3ko&callback=initMap"
         $("#mapScript").attr("src", mapLink);
         findPlaces(concertVenue, concertCity);
