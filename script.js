@@ -147,7 +147,7 @@ function concertInfo() {
   aTicket.attr('target', '_blank');
   aTicket.text('Buy Tickets');
   var aBack = $('<button>');
-  aBack.attr('class', 'a-back col s12');
+  aBack.attr('class', 'a-back btn btn-dark col s12');
   aBack.text('Back');
 
   row1.append(pName);
