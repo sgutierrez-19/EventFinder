@@ -107,6 +107,7 @@ function search(eventInput) {
           '//maps.googleapis.com/maps/api/js?key=AIzaSyBg8H-9S7JXehlh3z4iyqRWNHfbnbEE3ko&callback=initMap';
         $('#mapScript').attr('src', mapLink);
         findPlaces(concertVenue, concertCity);
+        initMap();
       });
     }
   });
